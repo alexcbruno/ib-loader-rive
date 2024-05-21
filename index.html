@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Rive Hello World</title>
+  </head>
+  <style>
+    #rive-canvas {
+      width: 96px;
+      height: 96px;
+    }
+  </style>
+  <body>
+    <canvas id="rive-canvas"></canvas>
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script>
+      let layout = new rive.Layout({
+        fit: rive.Fit.Contain,
+      });
+
+      const r = new rive.Rive({
+        src: "rive/ib_ai_loader.riv",
+        canvas: document.getElementById("rive-canvas"),
+        autoplay: true,
+        artboard: "Loader",
+        layout: layout,
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+  </body>
+</html>
+<script src="https://unpkg.com/@rive-app/canvas@2.1.0"></script>
